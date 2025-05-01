@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Joe’s Daily Upgrade</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#f1f1ff"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9fb;
+      padding: 20px;
+    }
+    .container {
+      max-width: 450px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    .section {
+      margin-top: 20px;
+    }
+    .section h3 {
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+      color: #666;
+    }
+    .task {
+      margin: 10px 0;
+      padding: 10px;
+      background: #f1f1ff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .task:hover {
+      background-color: #e0e0fc;
+    }
+    .completed {
+      text-decoration: line-through;
+      color: #888;
+      background: #d4ffd4 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Joe’s Daily Upgrade</h2>
+
+    <div class="section">
+      <h3>Mind</h3>
+      <div class="task">Read 10+ mins (book, article, news)</div>
+      <div class="task">Reflect or journal (voice note counts)</div>
+      <div class="task">Limit doomscrolling to 15 mins</div>
+    </div>
+
+    <div class="section">
+      <h3>Body</h3>
+      <div class="task">Move for at least 20 mins</div>
+      <div class="task">Eat one real meal</div>
+      <div class="task">Hydrate (3 bottles of water)</div>
+    </div>
+
+    <div class="section">
+      <h3>Future</h3>
+      <div class="task">Do 1 task toward your goals</div>
+      <div class="task">Follow up with someone</div>
+      <div class="task">Do something that makes you proud</div>
+    </div>
+
+    <div class="section">
+      <h3>Soul</h3>
+      <div class="task">Say 1 kind thing to yourself</div>
+      <div class="task">Do something joyful (music, dog, drone)</div>
+      <div class="task">Set 1 boundary (even with yourself)</div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.task').forEach(task => {
+      task.addEventListener('click', () => {
+        task.classList.toggle('completed');
+      });
+    });
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>
